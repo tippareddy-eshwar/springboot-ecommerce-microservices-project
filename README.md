@@ -11,7 +11,7 @@ The project also implements service discovery, centralized configuration, API Ga
 ---
 
 ## Project Architecture
-
+```
 Client
 
    |
@@ -40,8 +40,8 @@ MySQL Database
 Config Server
        |
    ELK Stack
+```
 
----
 
 ## Microservices Included
 

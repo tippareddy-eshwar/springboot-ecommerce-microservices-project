@@ -12,34 +12,66 @@ The project also implements service discovery, centralized configuration, API Ga
 
 ## Project Architecture
 ```
-Client
 
-   |
+                            ------------------
+                           |      Client      |
+                            ------------------
+                                     |
+                                     |
+                           ------------------
+                           |    API Gateway   |
+                           ------------------
+                                     |
+                                     |
 
-API Gateway
-    |
-    |
+                           ------------------
+                           |   Eureka Server  |
+                           ------------------
+                                     |
+        ----------------------------------------------------------------
+        |                      |                     |                 |
+        |                      |                     |                 |
 
-Eureka Server
-    |
-    |
+------------------     ----------------     ------------------     ------------------
+| Product Service|    |  Order Service |    |Inventory Service|    | Payment Service |
+------------------    - ---------------      ----------------       ----------------
+        |                      |                     |                 |
+        |                      |------Feign--------- |                 |
+        |                      |------Feign--------------------------- |
+        |                      |------Feign--------- |                 |
+        |                      |                                       |
+        |                      |--------------Kafka--------------------|
+        |                                      |
+        |                                      |
+        |                          ----------------------
+        |                          | Notification Service |
+        |                           ----------------------
+        |                                      |
+        ----------------------------------------------------------------
+                                     |
+                                     |
+                           ------------------
+                           |      MySQL DB    |
+                            ------------------
 
-Microservices
+        ----------------------------------------------------------------
+                                     |
+                                     |
+                            ------------------
+                           |   Config Server  |
+                            ------------------
 
-* Product Service
-* Order Service
-* Inventory Service
-* Payment Service
-* Notification Service
+        ----------------------------------------------------------------
+                                     |
+                                     |
+                           +------------------+
+                           |     ELK Stack     |
+                           | Elasticsearch     |
+                           | Logstash          |
+                           | Kibana            |
+                           +------------------+
 
-     |
 
-MySQL Database
-      |
-      |
-Config Server
-       |
-   ELK Stack
 ```
 
 

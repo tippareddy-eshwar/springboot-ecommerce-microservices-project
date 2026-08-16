@@ -8,67 +8,40 @@ The application manages products, orders, inventory, payments, and customer noti
 
 The project also implements service discovery, centralized configuration, API Gateway, inter-service communication, asynchronous messaging, fault tolerance, centralized logging, API documentation, and application monitoring.
 
-#Project-Architecture
+---
 
---
-                           +------------------+
-                           |      Client      |
-                           +------------------+
-                                     |
-                                     |
-                           +------------------+
-                           |    API Gateway    |
-                           +------------------+
-                                     |
-                                     |
-                           +------------------+
-                           |   Eureka Server   |
-                           +------------------+
-                                     |
-        ----------------------------------------------------------------
-        |                      |                     |                 |
-        |                      |                     |                 |
+## Project Architecture
 
-+----------------+    +----------------+    +----------------+    +----------------+
-| Product Service|    |  Order Service |    |Inventory Service|    | Payment Service |
-+----------------+    +----------------+    +----------------+    +----------------+
-        |                      |                     |                 |
-        |                      |------Feign--------->|                 |
-        |                      |------Feign---------------------------> |
-        |                      |------Feign--------->|                 |
-        |                      |                                       |
-        |                      |--------------Kafka--------------------|
-        |                                      |
-        |                                      |
-        |                          +----------------------+
-        |                          | Notification Service |
-        |                          +----------------------+
-        |                                      |
-        ----------------------------------------------------------------
-                                     |
-                                     |
-                           +------------------+
-                           |      MySQL DB     |
-                           +------------------+
-                                     |
-        ----------------------------------------------------------------
-                                     |
-                                     v
-                           +------------------+
-                           |   Config Server   |
-                           +------------------+
-       ----------------------------------------------------------------
-                                     |
-                                     |
-                           +------------------+
-                           |     ELK Stack     |
-                           | Elasticsearch     |
-                           | Logstash          |
-                           | Kibana            |
-                           +------------------+
+Client
 
+   |
 
+API Gateway
+    |
+    |
 
+Eureka Server
+    |
+    |
+
+Microservices
+
+* Product Service
+* Order Service
+* Inventory Service
+* Payment Service
+* Notification Service
+
+     |
+
+MySQL Database
+      |
+      |
+Config Server
+       |
+   ELK Stack
+
+---
 
 ## Microservices Included
 
@@ -219,5 +192,6 @@ Implemented using:
 ---
 
 ## Author
-
 Tippareddy Eshwar Reddy
+Eshwar Reddy
+

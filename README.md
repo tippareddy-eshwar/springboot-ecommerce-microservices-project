@@ -1,4 +1,4 @@
-# E-Commerce Microservices Application
+# Distributed E-Commerce Microservices Application
 
 ## Project Overview
 

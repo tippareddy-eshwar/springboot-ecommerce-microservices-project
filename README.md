@@ -187,7 +187,7 @@ Implemented using Apache Kafka.
 
 Swagger UI:
 
-[http://localhost:{port}/swagger-ui/index.html](http://localhost:{port}/swagger-ui/index.html)
+[http://localhost:8089/swagger-ui/index.html](http://localhost:{port}/swagger-ui/index.html)
 
 OpenAPI:
 

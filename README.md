@@ -225,5 +225,4 @@ Implemented using:
 
 ## Author
 Tippareddy Eshwar Reddy
-Eshwar Reddy
 

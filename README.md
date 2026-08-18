@@ -1,4 +1,4 @@
-# Distributed E-Commerce Microservices Application
+# Microservices-Based E-Commerce Order Management System
 
 ## Project Overview
 
